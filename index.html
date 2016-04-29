@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box</title>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/layoutit.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/list.css" rel="stylesheet">
+  <link href="css/content.css" rel="stylesheet">
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="css/plugInStyle.css" rel="stylesheet">
+
+  <link href="boxes/DynamicLayout.css" rel="stylesheet">
+</head>
+<body class="edit">
+<div class="navbar navbar-inverse navbar-fixed-top navbar-layoutit">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">可视化布局<span class="label label-default">BETA</span></a>
+  </div>
+  <div class="collapse navbar-collapse">
+
+    <ul class="nav" id="menu-layoutit">
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-xs btn-primary" act="list"><i
+              class="glyphicon-list glyphicon"></i> 列表
+          </button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-xs btn-primary" act="preview"><i
+              class="glyphicon-eye-open glyphicon"></i> 预览
+          </button>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-xs btn-primary" act="save|updateVersion" id="button-share-modal"
+            role="button" data-toggle="modal" data-target="#shareModal"><i
+              class="glyphicon-share glyphicon"></i> 保存
+          </button>
+          <button type="button" class="btn btn-xs btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li act="save|newVersion"><a href="#">保存为新的版本</a></li>
+            <li role="separator" class="divider"></li>
+            <li act="save|newForm"><a href="#">另存为新的表单</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="">
+      <div class="sidebar-nav">
+      </div>
+    </div>
+    <div class="edit column"></div>
+    <div class="pubinfo"></div>
+  </div>
+
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="prevModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:1024px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">预览</h4>
+        </div>
+        <div class="modal-body" style="padding:0;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-default" act="jsonData">查看结构</button>
+          <button type="button" class="btn btn-default" act="viewtype">查看数据</button>
+          <button type="button" class="btn btn-default" act="restoreData">恢复数据</button>
+          <div class="btn-group dropup">
+            <button class="btn btn-primary" act="save|updateVersion">保存</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li act="save|newVersion"><a href="#">保存为新的版本</a></li>
+              <li role="separator" class="divider"></li>
+              <li act="save|newForm"><a href="#">另存为新的表单</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="formName" tabindex="-1" role="dialog" aria-labelledby="prevModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">表单名称</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <input type="text" data-rule-required="true" name="boxname" class="form-control" placeholder="表单名称" data-rule-required="true" data-msg-required="请输入表单的名称">
+            </div>
+            <div class="form-group">
+              <select name="teamid" class="form-control" title="服务目录">
+                <optgroup label="Group 1">
+                  <option>Hello</option>
+                </optgroup>
+                <optgroup label="Group 1">
+                  <option>Hello</option>
+                </optgroup>
+              </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary">确定</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade" id="boxName" tabindex="-1" role="dialog" aria-labelledby="prevModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">组件名称</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <input type="text" data-rule-required="true" name="boxname" class="form-control" placeholder="组件名称" data-rule-required="true" data-msg-required="请输入组件的名称">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary">确定</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal fade" id="formList" tabindex="-1" role="dialog" aria-labelledby="prevModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">表单列表</h4>
+        </div>
+        <div class="modal-body" style="overflow:auto;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary" act="loadform">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/base64.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/moment-with-locales.js"></script>
+  <script src="js/bootstrap-datetimepicker.min.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/async.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/serialize.js"></script>
+  <script src="js/seriattr.js"></script>
+
+  <script src="boxes/BoxBase.js"></script>
+  <script src="boxes/Layout.js"></script>
+  <script src="boxes/DynamicLayout.js"></script>
+  <script src="boxes/TabLayout.js"></script>
+  <script src="boxes/PluginPub.js"></script>
+  <script src="boxes/Input.js"></script>
+  <script src="boxes/Email.js"></script>
+  <script src="boxes/PubInput.js"></script>
+  <script src="boxes/Radio.js"></script>
+  <script src="boxes/CheckBox.js"></script>
+  <script src="boxes/TextArea.js"></script>
+  <script src="boxes/Select.js"></script>
+  <script src="boxes/DatePicker.js"></script>
+  <script src="boxes/SubsysForm.js"></script>
+  <script src="boxes/DynamicFormPanel.js"></script>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

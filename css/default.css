@@ -1,0 +1,118 @@
+﻿@charset "utf-8";
+/*
+description: base.css 
+copyRight: yangYang netWork center
+author: cary [2014-01-01]
+update: cary [2014-01-01]
+网站通用样式模型，可根据自身网站进行对应修改
+*/ 
+
+/* 通用信息列表 */
+.infoList{text-align:left;}
+.infoList li{height:24px; line-height:24px; overflow:hidden; padding-left:14px; background:url(../images/share/point.png) no-repeat 2px 11px;}
+.infoList li a{font-size:12px;}
+.infoList li .date{float:right;color:#999;}
+.infoList li .node{color:#f00;margin-right:5px;}
+
+/* 通用带图片的信息列表_普通式 */
+.picList li{width:160px;text-align:center;}
+.picList li .pic img{width:160px;height:120px;}
+.picList li .pic a:hover img{border-color:#aaa;}
+.picList li .title{padding-top:5px;font-size:12px;}
+
+/* 通用带图片的信息列表_普通式 - 横排浮动 */
+.picListFl{ overflow:hidden; zoom:1; }
+.picListFl li{ width:164px; font-size:12px; margin:0 9px;text-align:center; float:left; _display:inline;}
+.picListFl li .pic{width:160px; height:120px;overflow:hidden; padding:1px; border:1px solid #ddd; background:#fff;}
+.picListFl li .pic img{ width:160px; height:120px; }
+.picListFl li .pic a:hover img{ border-color:#f60;}
+.picListFl li .title{ padding-top:5px;font-size:12px;}
+
+/* 内容带图片的信息列表_普通式 - 左图片右文字 */
+.txtPicList li{ overflow:hidden; background:url("../images/share/dotted.gif") repeat-x bottom; padding-bottom:10px;margin-bottom:10px;}
+.txtPicList li .pic{ width:96px; float:left; }
+.txtPicList li .pic img{ width:90px; height:120px; padding:2px; border:1px solid #ddd; background:#fff; }
+.txtPicList li .pic a:hover img{ border-color:#aaa;}
+.txtPicList li .con{ width:224px; float:left; padding-left:8px; }
+.txtPicList li .title{ height:28px; line-height:28px; font-size:12px; color:#c00; font-weight:bold; }
+.txtPicList li .title a{ color:#c00;}
+.txtPicList li .intro{ color:#666; line-height:20px; }
+.txtPicList li .intro .more{ color:#c00; font-size:12px; }
+
+/* 内容带图片的信息列表_普通式 - 上图片下文字 */
+.txtPicListB li .pic img{ width:190px; height:120; padding:4px; border:1px solid #ddd; background:#fff; }
+.txtPicListB li .pic a:hover img{ border-color:#aaa;}
+.txtPicListB li .title{ height:28px; line-height:28px; font-weight:bold; }
+.txtPicListB li .title a{ color:#f30; }
+.txtPicListB li .intro{ color:#666;}
+.txtPicListB li .intro .more{ color:#f60;}
+
+/* 头条图文信息列表_普通式 */
+.topicList .t{margin-bottom:5px; padding-bottom:10px;background:url("../images/share/dotted.gif") repeat-x bottom; }
+.topicList .t .title{ height:24px; text-align:center; line-height:24px; overflow:hidden;}
+.topicList .t .tit{font-weight:bold;font-size:16px; color:#f30;}
+.topicList .t .intro{text-indent:2em;}
+.topicList .t .intro .more{margin-left:10px;color:#f60;}
+.topicList .n{padding-left:10px;height:24px; line-height:24px;background:url("../images/share/point.png") no-repeat 2px 11px; overflow:hidden; }
+.topicList .n .title{font-size:12px;}
+.topicList .n .date{ float:right; color:#999;}
+/* 有图片时追加的类 class="topicList topicHasPic"*/
+.topicHasPic .t{ overflow:hidden; zoom:1; }
+.topicHasPic .pic{ width:126px; float:left;}
+.topicHasPic .pic img{ width:120px; height:90px; padding:2px; border:1px solid #E0E9EB; } 
+.topicHasPic .pic a:hover img{ border-color:#aaa;}
+.topicHasPic .pic a:hover img{ border-color:#aaa;}
+.topicHasPic .con{ width:260px; padding-left:10px; float:left;}
+
+/* 焦点图切换- 数字 */
+.focusBox{ width:330px;overflow:hidden; position:relative;}
+.focusBox .hd{ position:absolute; z-index:1; right:10px; bottom:35px;height:16px !importantx; padding-top:0 !important;}
+.focusBox .hd ul{ overflow:hidden; zoom:1; float:left;}
+.focusBox .hd ul li{ float:left; margin-right:1px;width:16px; height:16px; line-height:16px; text-align:center; background:#000; cursor:pointer; color:#fff; filter:alpha(opacity=60);opacity:0.6; }
+.focusBox .hd ul li.on{ background:#f00;font-weight:bold; filter:alpha(opacity=100);opacity:1;}
+.focusBox .bd{ position:relative; padding:4px; background-color:white; border:1px solid #ddd; }
+.focusBox .bd .pic img{ width:320px; height:240px; }
+.focusBox .bd .con{ height:24px; line-height:24px; text-align:center;font-weight:bold;}
+.focusBox .bd .con .title{position:relative;z-index:3;}
+.focusBox .bd .con .title a{display:block;color:#f60;}
+.focusBox .bd .bg{position:absolute;bottom:0;left:0;z-index:2;width:100%;height:24px; line-height:24px;background:#333;filter:alpha(opacity=40);opacity:.4;}
+
+/* 焦点图切换- 缩图 */
+.focusImgBox{width:470px; height:370px; float:left;}
+.focusImgBox .bd{overflow:hidden;}
+.focusImgBox .bd li{position:relative; z-index:1; width:470px; height:320px;}
+.focusImgBox .bd .pic img{width:470px; height:320px;}
+.focusImgBox .bd .title{position:absolute; z-index:2; left:0px; bottom:0px; width:100%; height:28px; line-height:28px; text-align:center; font-size:12px; color:#fff; }
+.focusImgBox .bd .title a{color:#fff;}
+.focusImgBox .bd .bg{width:100%; height:28px; float:left; position:absolute; z-index:1; left:0px; bottom:0px; background-color:black; opacity:0.5; filter:alpha(opacity=50); }
+.focusImgBox .hd{overflow:hidden;}
+.focusImgBox .hd li{float:left;overflow:hidden;_display:inline; cursor:pointer;width:90px; margin:10px 2px 0;}
+.focusImgBox .hd li.li4{margin-right:0;}
+.focusImgBox .hd li img{display:block; width:84px; height:55px;padding:2px;border:1px solid #ddd;}
+.focusImgBox .hd li.on{background:url(../images/icon.png) no-repeat 41px -26px;margin-top:5px; padding-top:5px;}
+.focusImgBox .hd li.on img{background:#f7bc62;border:1px solid #f7bc62;}
+.focusImgBox .hd ul li .title{display:none;}
+
+/* 分页样式 */
+.page{ text-align:center; padding:20px;  font-size:12px;  }
+.page input{ border:1px solid #c5c5c5; background:#fff; width:30px; height:18px; line-height:18px;}
+.page a,.page span{ display:inline-block; *display:inline; zoom:1; margin-right:0px; height:20px; line-height:20px; }
+.page a,.page a:active{ display:inline-block; *display:inline; zoom:1; border:1px solid #c5c5c5; padding:0 6px;}
+.page a:hover {border:1px solid #c00; text-decoration:none; color:#c00;}
+.page span.current {background:#c00; border:1px solid #c00; color:#fff; font-weight:bold; padding:0 6px; }
+.page span.disabled {border:1px solid #c5c5c5;  padding:0 6px; color:#999;}
+
+/*-- 网站地图 --*/
+.siteMap{ padding:15px 10px; overflow:hidden; zoom:1; }
+.siteMap .li1{ margin-bottom:10px; }
+.siteMap .h1{ height:40px; line-height:40px;border:1px dotted #ccc; background:#fff;}
+.siteMap .h1 .a1{font:normal 16px/40px "Microsoft YaHei"; _font-weight:bold; color:#1E72B4; padding-left:10px;}
+.siteMap .ul1{ padding:10px 20px; zoom:1;}
+.siteMap .li2{display:inline-block; *display:inline; zoom:1; padding-right:10px; vertical-align:top;}
+.siteMap .a2{ color:#666; }
+.siteMap .ul2{ padding:0 0 20px 0; }
+.siteMap .li3{line-height:18px;display:inline-block; *display:inline; zoom:1; }
+.siteMap .a3{ color:#999; padding-right:10px; margin-right:10px; border-right:1px solid #ddd;}
+.siteMap .last3 .a3{ border-right:0;}
+.siteMap #liID41 .li2{ display:block;}
+

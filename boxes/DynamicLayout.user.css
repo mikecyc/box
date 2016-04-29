@@ -1,0 +1,3 @@
+.dynamiclayout{min-height:35px;position:relative;}
+.dynamiclayout>.column{margin-right:100px;}
+.dynamiclayout>.dl-btn{position:absolute;width:90px;top:5px;right:0;}

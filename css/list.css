@@ -1,0 +1,32 @@
+﻿/* 侧栏导航 */
+.sideBox{padding:10px;height:220px;background:#fff;margin-bottom:10px;overflow:hidden;}
+.sideBox .hd{height:30px; line-height:30px; background:#f60; padding:0 10px;text-align:center;overflow:hidden;}
+.sideBox .hd .more{color:#fff;}
+.sideBox .hd h3 span{font-weight:bold; font-size:14px;color:#fff;}
+.sideBox .bd{padding:5px 0 0;}
+
+#sideMenu .bd li{margin-bottom:2px; height:30px; line-height:30px;text-align:center; overflow:hidden;}
+#sideMenu .bd li a{display:block;background:#EAE6DD;}
+#sideMenu .bd li a:hover{background:#D5CFBF;}
+
+/* 列表页 */
+#mainBox{margin-bottom:10px;padding:10px;background:#fff;overflow:hidden;}
+#mainBox .mHd{border-bottom:2px solid #09c;height:30px;line-height:30px;}
+#mainBox .mHd h3{display:inline-block;*display:inline;zoom:1;padding:0 15px;background:#09c;color:#fff;}
+#mainBox .mHd h3 span{color:#fff;font-size:14px;font-weight:bold;}
+#mainBox .path{float:right;}
+
+/* 位置导航 */
+.path{ height:30px; line-height:30px; padding-left:10px;}
+.path a,.path span{ margin:0 5px;}
+
+/* 文章列表 */
+.newsList{padding:10px;text-align:left;}
+.newsList li{background:url("../images/share/point.png") no-repeat 2px 14px; padding-left:10px;height:30px; line-height:30px;}
+.newsList li a{display:inline-block;*display:inline;zoom:1;font-size:14px;}
+.newsList li .date{float:right; color:#999;}
+.newsList li.split{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dotted #ddd;height:0px;line-height:0px;overflow:hidden;}
+
+/* 通用带图片的信息列表_普通式 */
+.picList{padding:10px;text-align:left;}
+.picList li{margin:0 5px;height:190px;}
